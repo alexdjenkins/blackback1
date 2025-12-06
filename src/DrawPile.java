@@ -1,25 +1,32 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DrawPile extends Cards {
-    private ArrayList<Card> DrawPile = new ArrayList<Card>();
+    private ArrayList<Card> drawPile = new ArrayList<>();
 
     public DrawPile() {
-        for (Card card : cards) {
-            DrawPile.add(card);
-        }
+        resetPile();
+        shuffleDeck();
+    }
+
+    public void resetPile() {
+        drawPile.clear();
+        drawPile.addAll(Arrays.asList(cards));
         shuffleDeck();
     }
 
     public void shuffleDeck() {
-        ArrayList<Card> newDeck = new ArrayList<Card>();
-        for (Card card : DrawPile) {
-            newDeck.add(card);
+        ArrayList<Card> shuffledPile = new ArrayList<Card>();
+        while (!drawPile.isEmpty()) {
+            int randIndex = (int)(Math.random() * drawPile.size());
+            shuffledPile.add(drawPile.remove(randIndex));
         }
+        drawPile = shuffledPile;
     }
 
     public String toString() {
         String currentPile = "";
-        for (Card card : DrawPile) {
+        for (Card card : drawPile) {
             currentPile += card+"\n";
         }
         return currentPile;

@@ -3,8 +3,7 @@ public class Cards extends Deck {
                                     Ranks.SIX, Ranks.SEVEN, Ranks.EIGHT, Ranks.NINE, Ranks.TEN, 
                                     Ranks.JACK, Ranks.QUEEN, Ranks.KING};
     public static Suits[] suit = {Suits.HEARTS, Suits.DIAMONDS, Suits.CLUBS, Suits.SPADES};
-    public Card[] cards = new Card[52];
-    public final int NUM_CARDS = 52;
+    public Card[] cards = new Card[NUM_CARDS];
 
     public Cards() {
         int count = 0;
@@ -15,16 +14,6 @@ public class Cards extends Deck {
             }
         }
     }
-
-    
-
-    public Card drawCard(){
-        return drawPile.drawCard();
-    }
-
-    
-
-    
     
     public String toString() {
         String cardsString = "";

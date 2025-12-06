@@ -4,7 +4,6 @@ public class DiscardPile extends Cards {
     private ArrayList<Card> discPile = new ArrayList<Card>();
 
     public DiscardPile() {
-
     }
 
     public String toString() {
